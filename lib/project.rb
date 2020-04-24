@@ -12,4 +12,12 @@ class Project
         ProjectBacker.new(self, backer)
     end
 
+    def backers
+        ProjectBacker.all.map do |a| 
+            if a.project == self 
+            a.backer
+            end
+        end
+    end
+
 end

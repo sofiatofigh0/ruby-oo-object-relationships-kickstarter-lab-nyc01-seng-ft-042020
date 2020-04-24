@@ -14,15 +14,10 @@ class Backer
 
     def backed_projects
         ProjectBacker.all.map do |a| 
-            if a.backer == self 
+            if a.backer == self
             a.project
             end
-        end 
-        # binding.pry
-        # if a.backer == self 
-        # a.backer
-        # end
-        # }
+        end
     end
 
 end
