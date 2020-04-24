@@ -1,6 +1,3 @@
-#new code
-#something for Sofia to pull
-
 require "pry"
 
 class Backer
@@ -11,7 +8,21 @@ class Backer
         @name=name
     end
 
+    def back_project(project)
+        ProjectBacker.new(project, self)
+    end
 
-
+    def backed_projects
+        ProjectBacker.all.map do |a| 
+            if a.backer == self 
+            a.project
+            end
+        end 
+        # binding.pry
+        # if a.backer == self 
+        # a.backer
+        # end
+        # }
+    end
 
 end
